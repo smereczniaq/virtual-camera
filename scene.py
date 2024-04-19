@@ -43,7 +43,7 @@ class Scene:
             obj.move(move_matrix)
 
     def rotate(self, axis, angle):
-        # angle = np.radians(angle)
+        angle = np.radians(angle)
         if axis == "x":
             rotation_matrix = np.array([
                 [1, 0, 0, 0],
