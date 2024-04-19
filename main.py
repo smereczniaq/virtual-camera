@@ -48,9 +48,9 @@ def main():
             scene.move(MOVE_FORWARD)
         if keys[pygame.K_s]:
             scene.move(MOVE_BACKWARD)
-        if keys[pygame.K_RIGHT]:
-            scene.rotate("y", ANGLE)
         if keys[pygame.K_LEFT]:
+            scene.rotate("y", ANGLE)
+        if keys[pygame.K_RIGHT]:
             scene.rotate("y", -ANGLE)
         if keys[pygame.K_UP]:
             scene.rotate("x", -ANGLE)
