@@ -11,6 +11,8 @@ class Cube:
         move_y = height / 2
 
         for edge in self.edges:
+            edge_color = (0, 0, 0)
+
             vertex1 = edge.vertex1
             vertex2 = edge.vertex2
 
@@ -22,7 +24,7 @@ class Cube:
             x2 = vertex2_2d.x + move_x
             y2 = vertex2_2d.y + move_y
 
-            pygame.draw.line(screen, (0, 0, 0), (x1, y1), (x2, y2))
+            pygame.draw.line(screen, edge_color, (x1, y1), (x2, y2), 2)
 
     def move(self, matrix):
         for vertex in self.vertices:

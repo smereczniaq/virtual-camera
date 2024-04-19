@@ -12,14 +12,17 @@ MOVE_UP = [0, 10, 0]
 MOVE_DOWN = [0, -10, 0]
 MOVE_FORWARD = [0, 0, -10]
 MOVE_BACKWARD = [0, 0, 10]
-ANGLE = 6
+ANGLE = 3
+ZOOM = 1.1
 
-d = 200
+d = 500
 
 scene = scene.Scene("scenes/scene.txt")
 
 
 def main():
+    global d
+    global scene
     pygame.init()
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
     clock = pygame.time.Clock()
@@ -27,31 +30,6 @@ def main():
     running = True
     while running:
         for event in pygame.event.get():
-            # if event.type == pygame.KEYDOWN:
-            #     if event.key == pygame.K_d:
-            #         scene.move(MOVE_RIGHT)
-            #     if event.key == pygame.K_a:
-            #         scene.move(MOVE_LEFT)
-            #     if event.key == pygame.K_w:
-            #         scene.move(MOVE_UP)
-            #     if event.key == pygame.K_s:
-            #         scene.move(MOVE_DOWN)
-            #     if event.key == pygame.K_e:
-            #         scene.move(MOVE_FORWARD)
-            #     if event.key == pygame.K_q:
-            #         scene.move(MOVE_BACKWARD)
-            #     if event.key == pygame.K_l:
-            #         scene.rotate("y", ANGLE)
-            #     if event.key == pygame.K_j:
-            #         scene.rotate("y", -ANGLE)
-            #     if event.key == pygame.K_i:
-            #         scene.rotate("x", -ANGLE)
-            #     if event.key == pygame.K_k:
-            #         scene.rotate("x", ANGLE)
-            #     if event.key == pygame.K_u:
-            #         scene.rotate("z", -ANGLE)
-            #     if event.key == pygame.K_o:
-            #         scene.rotate("z", ANGLE)
 
             if event.type == pygame.QUIT:
                 running = False
@@ -82,6 +60,15 @@ def main():
             scene.rotate("z", -ANGLE)
         if keys[pygame.K_PERIOD]:
             scene.rotate("z", ANGLE)
+        if keys[pygame.K_EQUALS]:
+            if d < 2000:
+                d *= ZOOM
+        if keys[pygame.K_MINUS]:
+            if d > 50:
+                d /= ZOOM
+        if keys[pygame.K_r]:
+            d = 500
+            scene = scene.reload()
 
         screen.fill((255, 255, 255))
 

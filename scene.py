@@ -9,6 +9,7 @@ translation_matrix = np.array([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 
 
 class Scene:
     def __init__(self, file_name):
+        self.file_name = file_name
         self.objects = self.load_objects(file_name)
 
     def load_objects(self, file_name):
@@ -68,3 +69,7 @@ class Scene:
 
         for obj in self.objects:
             obj.rotate(rotation_matrix)
+
+
+    def reload(self):
+        return Scene(self.file_name)

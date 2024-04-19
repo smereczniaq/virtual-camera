@@ -2,6 +2,10 @@ import numpy as np
 
 class Vertex3D:
     def __init__(self, x, y, z):
+        self.start_x = x
+        self.start_y = y
+        self.start_z = z
+        
         self.x = x
         self.y = y
         self.z = z
