@@ -57,9 +57,9 @@ def main():
         if keys[pygame.K_DOWN]:
             scene.rotate("x", ANGLE)
         if keys[pygame.K_COMMA]:
-            scene.rotate("z", -ANGLE)
-        if keys[pygame.K_PERIOD]:
             scene.rotate("z", ANGLE)
+        if keys[pygame.K_PERIOD]:
+            scene.rotate("z", -ANGLE)
         if keys[pygame.K_EQUALS]:
             if d < 2000:
                 d *= ZOOM
