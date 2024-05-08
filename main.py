@@ -2,17 +2,18 @@ import numpy as np
 import pygame
 import scene
 import math
+from bsp_tree import build_bsp_tree, traverse_bsp_tree
 
 WIDTH = 1600
 HEIGHT = 900
 
-MOVE_RIGHT = [-10, 0, 0]
-MOVE_LEFT = [10, 0, 0]
-MOVE_UP = [0, 10, 0]
-MOVE_DOWN = [0, -10, 0]
-MOVE_FORWARD = [0, 0, -10]
-MOVE_BACKWARD = [0, 0, 10]
-ANGLE = 3
+MOVE_RIGHT = [-3, 0, 0]
+MOVE_LEFT = [3, 0, 0]
+MOVE_UP = [0, 3, 0]
+MOVE_DOWN = [0, -3, 0]
+MOVE_FORWARD = [0, 0, -3]
+MOVE_BACKWARD = [0, 0, 3]
+ANGLE = 0.5
 ZOOM = 1.1
 
 d = 500
@@ -71,9 +72,7 @@ def main():
             scene = scene.reload()
 
         screen.fill((255, 255, 255))
-
-        for obj in scene.objects:
-            obj.draw(screen, WIDTH, HEIGHT, d)
+        scene.draw(screen, WIDTH, HEIGHT, d)
 
         pygame.display.flip()
         clock.tick(60)

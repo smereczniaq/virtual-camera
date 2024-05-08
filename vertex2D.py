@@ -6,7 +6,7 @@ class Vertex2D:
         self.y = (y * d) / z
 
     def normalize_z(self, z):
-        return 1 if z < 1 else z
+        return 2 if z <= 2 else z
 
 
     

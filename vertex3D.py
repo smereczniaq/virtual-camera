@@ -5,7 +5,7 @@ class Vertex3D:
         self.start_x = x
         self.start_y = y
         self.start_z = z
-        
+
         self.x = x
         self.y = y
         self.z = z
