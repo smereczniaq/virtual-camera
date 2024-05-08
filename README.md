@@ -36,6 +36,7 @@ The application allows user interaction through keyboard inputs to move and rota
 | `→` (Right)   | Rotate clockwise along the vertical (Y) axis       |
 | `.` (Period)  | Rotate clockwise along the perpendicular (Z) axis  |
 | `,` (Comma)   | Rotate counterclockwise along the perpendicular (Z) axis |
+| `r`           | Scene restart                                      |
 
 ## Getting Started
 To run the Virtual Camera, ensure you have Python installed and clone this repository. Navigate to the project directory and run the main script:<br>
